@@ -1,1 +1,20 @@
 @import "tailwindcss";
+@import "@fontsource/space-grotesk";
+@import "@fontsource/inter";
+
+:root {
+  background: var(--bg);
+  color: var(--text);
+  --bg: #0f1117;
+  --fg: #161b27;
+  --border: #1e2433;
+  --accent: #4f8ef7;
+  --text: #f0f4ff;
+  --text-muted: #8892a4;
+}
+
+@theme {
+  --breakpoint-xs: 300px;
+  --font-space: "Space Grotesk";
+  --font-inter: "Inter";
+}
