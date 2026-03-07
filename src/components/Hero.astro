@@ -1,0 +1,64 @@
+---
+import { Github, Mail, MapPin, Clock } from "@lucide/astro";
+---
+
+<section class="mx-auto flex h-screen w-[80vw] items-center justify-between">
+  <div class="space-y-8">
+    <div class="flex items-center gap-2 text-(--accent)">
+      <hr class="h-px w-10 bg-(--accent)" />
+      <span class="font-inter text-sm tracking-[0.25rem]">
+        FULL STACK DEVELOPER
+      </span>
+    </div>
+    <div>
+      <h1 class="font-space mb-2 text-6xl">Hi, Slade here👋</h1>
+      <p class="font-serif text-3xl text-(--text-muted) italic">
+        I build things for the web.
+      </p>
+    </div>
+    <p class="font-inter max-w-xl text-(--text-muted)">
+      I build <strong class="text-(--text)">web apps and internal tools</strong> —
+      from the interface down to the backend and database. React, TypeScript, Python.
+      Based in South Africa, working with clients globally.
+    </p>
+    <button class="rounded-md bg-(--accent) px-6 py-3 text-sm text-black">
+      View projects
+    </button>
+
+    <div class="font-inter flex items-center gap-4 text-(--text-muted)">
+      <span class="flex items-center gap-2">
+        <MapPin class="text-(--accent)" />
+        South Africa
+      </span>
+      <span class="flex items-center gap-2">
+        <hr class="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+        Available for work
+      </span>
+      <span class="flex items-center gap-2">
+        <Clock class="text-(--accent)" />
+        Open to remote
+      </span>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center gap-2 text-(--text-muted)">
+    <hr class="h-12 w-px bg-(--text-muted)" />
+    <a
+      class="cursor-pointer hover:text-(--accent)"
+      href="https://github.com/thecentinol"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <Github />
+    </a>
+    <a
+      class="cursor-pointer hover:text-(--accent)"
+      href="mailto:centinol@proton.me"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <Mail />
+    </a>
+    <hr class="h-12 w-px bg-(--text-muted)" />
+  </div>
+</section>

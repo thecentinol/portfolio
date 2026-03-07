@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "@fontsource/space-grotesk";
 @import "@fontsource/inter";
+@import "@fontsource/instrument-serif";
 
 :root {
   background: var(--bg);
@@ -17,4 +18,5 @@
   --breakpoint-xs: 300px;
   --font-space: "Space Grotesk";
   --font-inter: "Inter";
+  --font-serif: "Instrument Serif", serif;
 }
