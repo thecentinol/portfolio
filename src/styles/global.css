@@ -9,6 +9,7 @@
   --bg: #0f1117;
   --fg: #161b27;
   --border: #1e2433;
+  --tag: #1f232f;
   --accent: #4f8ef7;
   --text: #f0f4ff;
   --text-muted: #8892a4;
@@ -19,4 +20,36 @@
   --font-space: "Space Grotesk";
   --font-inter: "Inter";
   --font-serif: "Instrument Serif", serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-space);
+  font-weight: bold;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(14deg);
+  }
+  30% {
+    transform: rotate(-8deg);
+  }
+  45% {
+    transform: rotate(14deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

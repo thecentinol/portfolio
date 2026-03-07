@@ -3,7 +3,7 @@
 		"strict": true,
 		"target": "ESNext",
 		"module": "ESNext",
-		"moduleResolution": "Bundler",
+		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"noEmit": true,

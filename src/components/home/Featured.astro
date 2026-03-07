@@ -1,0 +1,44 @@
+---
+import { Star, ArrowRight } from "@lucide/astro";
+import ProjectCard from "../projects/ProjectCard.astro";
+---
+
+<section class="mx-auto h-screen w-[75vw]">
+  <div class="flex items-center justify-between">
+    <h2 class="flex items-center gap-2 text-4xl">
+      <Star size={30} class="text-(--accent)" />
+      Featured Projects
+    </h2>
+    <a
+      class="group flex cursor-pointer items-center gap-2 text-sm text-(--accent) underline decoration-dashed underline-offset-4"
+    >
+      VIEW ALL
+      <ArrowRight size={18} class="duration-300 group-hover:translate-x-1" />
+    </a>
+  </div>
+
+  <div class="grid h-full w-full grid-cols-2 items-center gap-4">
+    <ProjectCard
+      title="AgentFlux"
+      desc="CRM built for real estate. Custom RSA-256 auth, JWT tokens, and PostgreSQL CRUD — all from scratch."
+      tags={[
+        "Docker",
+        "React",
+        "Typescript",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "JWT",
+      ]}
+    >
+      <div slot="media"></div>
+    </ProjectCard>
+    <ProjectCard
+      title="SermoUI"
+      desc="A local web interface for running and testing LLMs via Ollama. Supports model switching, conversation history, and streaming responses."
+      tags={["React", "Typescript", "Ollama API", "Zustand"]}
+    >
+      <div slot="media"></div>
+    </ProjectCard>
+  </div>
+</section>
