@@ -6,6 +6,7 @@
 :root {
   background: var(--bg);
   color: var(--text);
+  font-family: var(--font-dmsans);
   --bg: #0f1117;
   --fg: #161b27;
   --border: #1e2433;
@@ -15,19 +16,21 @@
   --text-muted: #8892a4;
 }
 
-@theme {
-  --breakpoint-xs: 300px;
-  --font-space: "Space Grotesk";
-  --font-inter: "Inter";
-  --font-serif: "Instrument Serif", serif;
-}
-
 h1,
 h2,
 h3,
-h4 {
-  font-family: var(--font-space);
-  font-weight: bold;
+h4,
+h5,
+h6 {
+  font-family: var(--font-syne);
+}
+
+.font-mono {
+  font-family: var(--font-ibm);
+}
+
+@theme {
+  --breakpoint-xs: 300px;
 }
 
 @keyframes wiggle {
