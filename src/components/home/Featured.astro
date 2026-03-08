@@ -1,6 +1,19 @@
 ---
 import { Star, ArrowRight } from "@lucide/astro";
 import ProjectCard from "../projects/ProjectCard.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const agentflux = await getCollection(
+  "projects",
+  ({ data }: CollectionEntry<"projects">) => data.title === "AgentFlux",
+);
+const af = agentflux[0].data;
+
+const sermoui = await getCollection(
+  "projects",
+  ({ data }: CollectionEntry<"projects">) => data.title === "SermoUI",
+);
+const sermo = sermoui[0].data;
 ---
 
 <section class="mx-auto h-screen w-[75vw]">
@@ -17,20 +30,8 @@ import ProjectCard from "../projects/ProjectCard.astro";
     </a>
   </div>
 
-  <div class="grid h-full w-full grid-cols-2 items-center gap-4">
-    <ProjectCard
-      title="AgentFlux"
-      desc="CRM built for real estate. Custom RSA-256 auth, JWT tokens, and PostgreSQL CRUD — all from scratch."
-      tags={[
-        "Docker",
-        "React",
-        "Typescript",
-        "Python",
-        "FastAPI",
-        "PostgreSQL",
-        "JWT",
-      ]}
-    >
+  <div class="flex h-full w-full items-center gap-4">
+    <ProjectCard title={af.title} desc={af.desc} tags={af.tags}>
       <div slot="image">
         <!-- card-v2-visual -->
         <div
@@ -115,11 +116,7 @@ import ProjectCard from "../projects/ProjectCard.astro";
         </div>
       </div>
     </ProjectCard>
-    <ProjectCard
-      title="SermoUI"
-      desc="A local web interface for running and testing LLMs via Ollama. Supports model switching, conversation history, and streaming responses."
-      tags={["React", "Typescript", "Ollama API", "Zustand"]}
-    >
+    <ProjectCard title={sermo.title} desc={sermo.desc} tags={sermo.tags}>
       <div slot="media"></div>
     </ProjectCard>
   </div>
