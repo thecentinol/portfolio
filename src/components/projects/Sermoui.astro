@@ -10,5 +10,30 @@ const sermo = sermoui[0].data;
 ---
 
 <ProjectCard title={sermo.title} desc={sermo.desc} tags={sermo.tags}>
-  <div slot="media"></div>
+  <div slot="image">
+    <div
+      class="relative h-55 overflow-hidden rounded-lg opacity-80 transition-all duration-300 group-hover:scale-105 group-hover:opacity-100"
+    >
+      <div
+        class="pointer-events-none absolute -top-10 -right-10 h-48 w-48 rounded-full bg-emerald-500 opacity-50 blur-3xl transition-opacity duration-300 group-hover:opacity-80"
+      >
+      </div>
+      <div class="flex h-full flex-col space-y-3 bg-(--bg) px-3 py-4 font-mono">
+        <span class="text-green-600">
+          <span class="text-(--text-muted)">$</span>
+          ollama run kimi-k2.5
+        </span>
+        <span class="text-(--text-muted)">
+          <span>&gt;</span>
+          pulling manifest...
+        </span>
+        <span class="text-green-600">&gt; model loaded ✓</span>
+        <span class="text-green-600">
+          <span class="text-(--text-muted)">$</span>
+          run sermo
+        </span>
+        <span class="text-green-600">&gt; sermo ready on localhost</span>
+      </div>
+    </div>
+  </div>
 </ProjectCard>
