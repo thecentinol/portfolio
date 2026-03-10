@@ -1,0 +1,14 @@
+---
+import ProjectCard from "../projects/ProjectCard.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const sermoui = await getCollection(
+  "projects",
+  ({ data }: CollectionEntry<"projects">) => data.title === "SermoUI",
+);
+const sermo = sermoui[0].data;
+---
+
+<ProjectCard title={sermo.title} desc={sermo.desc} tags={sermo.tags}>
+  <div slot="media"></div>
+</ProjectCard>
