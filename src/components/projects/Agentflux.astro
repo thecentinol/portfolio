@@ -5,7 +5,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 
 const agentflux = await getCollection(
   "projects",
-  ({ data }: CollectionEntry<"projects">) => data.title === "AgentFlux",
+  ({ data }: CollectionEntry<"projects">) => data.title === "AgentFlux (WIP)",
 );
 const af = agentflux[0].data;
 ---
