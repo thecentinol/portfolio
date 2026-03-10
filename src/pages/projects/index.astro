@@ -4,6 +4,7 @@ import { Folders, Tag } from "@lucide/astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 const projects = await getCollection("projects");
+type Project = CollectionEntry<"projects">;
 
 const tagColors = [
   "text-[#8839ef]",
@@ -17,7 +18,7 @@ const tagColors = [
 ---
 
 <Layout>
-  <div class="mx-auto w-[75vw] space-y-8">
+  <div class="mx-auto min-h-screen w-[75vw] space-y-8 pt-20">
     <h1 class="flex items-center gap-4 text-6xl font-bold">
       <Folders size={40} class="text-(--accent)" />
       Projects
@@ -25,8 +26,11 @@ const tagColors = [
 
     <div class="grid grid-cols-3 gap-4">
       {
-        projects.map((p) => (
-          <div class="group h-95 w-full cursor-pointer rounded-xl border border-(--border) bg-(--fg) p-5 duration-400 hover:border-(--accent)">
+        projects.map((p: Project) => (
+          <a
+            href={`/projects/${p.slug}`}
+            class="group h-95 w-full cursor-pointer rounded-xl border border-(--border) bg-(--fg) p-5 duration-400 hover:border-(--accent)"
+          >
             <div class="mb-2 aspect-video h-[50%] w-full rounded-xl bg-[#a9b4c0] p-10">
               <slot name="image" />
             </div>
@@ -40,7 +44,7 @@ const tagColors = [
               </p>
               <div class="flex flex-nowrap items-center gap-2">
                 <Tag size={18} class="shrink-0" />
-                {p.data.displayedTags.map((tag, i) => (
+                {p.data.displayedTags.map((tag: Project, i: Project) => (
                   <span
                     class={`shrink-0 bg-(--tag) px-2 py-2 font-mono text-xs font-bold ${tagColors[i % tagColors.length]}`}
                   >
@@ -49,7 +53,7 @@ const tagColors = [
                 ))}
               </div>
             </div>
-          </div>
+          </a>
         ))
       }
     </div>

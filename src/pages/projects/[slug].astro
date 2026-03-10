@@ -1,0 +1,12 @@
+---
+import { getCollection, getEntry } from "astro:content";
+
+const { slug } = Astro.params;
+const project = await getEntry("projects", slug);
+const { title, desc, tags, github, live } = project.data;
+
+if (!project) return Astro.redirect("/404");
+---
+
+<h1>{title}</h1>
+<p>{desc}</p>
