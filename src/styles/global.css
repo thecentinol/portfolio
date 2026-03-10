@@ -25,6 +25,10 @@ h6 {
   font-family: var(--font-syne);
 }
 
+.font-syne {
+  font-family: var(--font-syne);
+}
+
 .font-mono {
   font-family: var(--font-ibm);
 }

@@ -7,7 +7,21 @@ import { Github, Mail } from "@lucide/astro";
 >
   <span>&copy; 2026 Slade</span>
   <div class="flex items-center gap-2">
-    <Github class="cursor-pointer hover:text-(--accent)" />
-    <Mail class="cursor-pointer hover:text-(--accent)" />
+    <a
+      class="cursor-pointer hover:text-(--accent)"
+      href="https://github.com/thecentinol"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <Github />
+    </a>
+    <a
+      class="cursor-pointer hover:text-(--accent)"
+      href="mailto:centinol@proton.me"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <Mail />
+    </a>
   </div>
 </footer>
