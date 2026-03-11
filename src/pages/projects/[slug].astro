@@ -1,5 +1,6 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 
 const { slug } = Astro.params;
 const project = await getEntry("projects", slug);
@@ -8,5 +9,9 @@ const { title, desc, tags, github, live } = project.data;
 if (!project) return Astro.redirect("/404");
 ---
 
-<h1>{title}</h1>
-<p>{desc}</p>
+<Layout>
+  <div class="mx-auto min-h-screen w-[75vw] pt-20">
+    <h1>{title}</h1>
+    <p>{desc}</p>
+  </div>
+</Layout>
