@@ -6,6 +6,7 @@ const projects = await getCollection(
   "projects",
   ({ data }: CollectionEntry<"projects">) => data.featured === true,
 );
+type Project = CollectionEntry<"projects">;
 
 const tagColors = [
   "text-[#8839ef]",
@@ -25,6 +26,7 @@ const tagColors = [
       Featured Projects
     </h2>
     <a
+      href="/projects"
       class="group flex cursor-pointer items-center gap-2 text-sm text-(--accent) underline decoration-dashed underline-offset-4"
     >
       VIEW ALL
@@ -32,10 +34,13 @@ const tagColors = [
     </a>
   </div>
 
-  <div class="flex h-full w-full items-center gap-4">
+  <div class="grid h-full w-full grid-cols-2 items-center gap-4">
     {
-      projects.map((p) => (
-        <div class="group h-120 w-full cursor-pointer rounded-xl border border-(--border) bg-(--fg) duration-400 hover:border-(--accent)">
+      projects.map((p: Project) => (
+        <a
+          href={`/projects/${p.slug}`}
+          class="group h-120 w-full cursor-pointer rounded-xl border border-(--border) bg-(--fg) duration-400 hover:border-(--accent)"
+        >
           <div class="h-[65%] rounded-t-xl bg-[#a9b4c0] p-10">
             <slot name="image" />
           </div>
@@ -47,16 +52,24 @@ const tagColors = [
             <p class="font-inter text-sm text-(--text-muted)">{p.data.desc}</p>
             <div class="flex flex-nowrap items-center gap-2">
               <Tag size={18} class="shrink-0" />
-              {p.data.tags.map((tag, i) => (
-                <span
-                  class={`shrink-0 bg-(--tag) px-2 py-2 font-mono text-xs font-bold ${tagColors[i % tagColors.length]}`}
-                >
-                  {tag}
-                </span>
-              ))}
+              {p.data.tags.length > 5
+                ? p.data.displayedTags.map((tag: Project, i: Project) => (
+                    <span
+                      class={`shrink-0 bg-(--tag) px-2 py-2 font-mono text-xs font-bold ${tagColors[i % tagColors.length]}`}
+                    >
+                      {tag}
+                    </span>
+                  ))
+                : p.data.tags.map((tag: Project, i: Project) => (
+                    <span
+                      class={`shrink-0 bg-(--tag) px-2 py-2 font-mono text-xs font-bold ${tagColors[i % tagColors.length]}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
             </div>
           </div>
-        </div>
+        </a>
       ))
     }
   </div>
