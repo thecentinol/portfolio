@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "@fontsource/space-grotesk";
 @import "@fontsource/inter";
 @import "@fontsource/instrument-serif";

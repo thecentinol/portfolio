@@ -1,10 +1,11 @@
 ---
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 const { slug } = Astro.params;
 const project = await getEntry("projects", slug);
 const { title, desc, tags, github, live } = project.data;
+const { Content } = await render(project);
 
 if (!project) return Astro.redirect("/404");
 ---
@@ -13,5 +14,9 @@ if (!project) return Astro.redirect("/404");
   <div class="mx-auto min-h-screen w-[75vw] pt-20">
     <h1>{title}</h1>
     <p>{desc}</p>
+
+    <div class="prose prose-invert prose-a:text-(--accent) max-w-2xl">
+      <Content />
+    </div>
   </div>
 </Layout>
