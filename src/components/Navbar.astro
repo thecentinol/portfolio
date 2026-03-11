@@ -1,14 +1,36 @@
 ---
+const pathname = Astro.url.pathname;
+const segments = pathname.split("/").filter(Boolean);
 
+const crumbs = segments.map((seg, i) => ({
+  label: seg,
+  href: "/" + segments.slice(0, i + 1).join("/"),
+}));
 ---
 
 <nav
   class="fixed inset-x-0 z-10 mx-auto flex h-15 w-[80vw] items-center justify-between bg-transparent px-6 font-semibold backdrop-blur-sm"
 >
-  <span class="flex items-center gap-1">
+  <div class="flex items-center gap-1">
     <a href="/" class="text-(--accent)">~</a>
-    /
-  </span>
+    {
+      crumbs.map((crumb, i) => (
+        <>
+          <span>/</span>
+          {i === crumbs.length - 1 ? (
+            <span>{crumb.label}</span>
+          ) : (
+            <a href={crumb.href} class="hover:text-(--accent)">
+              {crumb.label}
+            </a>
+          )}
+        </>
+      ))
+    }
+    <div class="h-4 w-2 animate-pulse bg-(--accent) [animation-duration:3s]">
+    </div>
+  </div>
+
   <ul class="flex items-center gap-8">
     <li><a href="/about" class="hover:text-(--accent)">About</a></li>
     <li><a href="/projects" class="hover:text-(--accent)">Projects</a></li>
