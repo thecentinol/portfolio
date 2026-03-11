@@ -1,8 +1,9 @@
 ---
 title: "Portfolio"
 desc: "The website you're currently on. My personal portfolio site."
+image: "../../static/portfolio.webp"
+alt: "Portfolio image"
 tags: ["Astro", "Typescript", "TailwinCSS"]
-displayedTags: ["Astro", "Typescript", "TailwinCSS"]
 ---
 
 # Portfolio

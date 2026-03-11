@@ -12,7 +12,8 @@
 		"jsx": "preserve",
 		"plugins": [{ "name": "@astrojs/ts-plugin" }],
 		"paths": {
-			"@components/": ["./src/components/*"]
+			"@components/*": ["./src/components/*"],
+			"@static/*": ["./src/static/*"]
 		}
 	},
 	"extends": "astro/tsconfigs/strict",

@@ -1,6 +1,8 @@
 ---
-title: "AgentFlux (WIP)"
+title: "AgentFlux"
 desc: "CRM built for real estate. Custom RSA-256 auth, JWT tokens, and PostgreSQL CRUD — all from scratch."
+image: "../../static/agentflux.webp"
+alt: "Agentflux image"
 tags:
   [
     "Docker",
@@ -11,7 +13,6 @@ tags:
     "PostgreSQL",
     "Tanstack Query",
   ]
-displayedTags: ["React", "Docker", "FastAPI", "PostgreSQL"]
 featured: true
 ---
 

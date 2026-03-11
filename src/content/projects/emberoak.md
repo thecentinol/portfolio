@@ -1,8 +1,9 @@
 ---
 title: "Ember & Oak"
 desc: "A demo multi-page site for a Cape Town wood-fired restaurant."
+image: "../../static/ember-oak.webp"
+alt: "Ember & Oak image"
 tags: ["Astro", "Typescript", "Motion"]
-displayedTags: ["Astro", "Typescript", "Motion"]
 ---
 
 # Ember & Oak

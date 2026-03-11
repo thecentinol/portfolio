@@ -1,6 +1,7 @@
 ---
 import { Star, ArrowRight, Tag } from "@lucide/astro";
 import { getCollection, type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 
 const projects = await getCollection(
   "projects",
@@ -34,39 +35,39 @@ const tagColors = [
     </a>
   </div>
 
-  <div class="grid h-full w-full grid-cols-2 items-center gap-4">
+  <div class="grid grid-cols-1 items-center gap-4 md:grid-cols-2">
     {
       projects.map((p: Project) => (
         <a
           href={`/projects/${p.slug}`}
-          class="group h-120 w-full cursor-pointer rounded-xl border border-(--border) bg-(--fg) duration-400 hover:border-(--accent)"
+          class="group cursor-pointer rounded-xl border border-(--border) bg-(--fg) duration-400 hover:border-(--accent)"
         >
-          <div class="h-[65%] rounded-t-xl bg-[#a9b4c0] p-10">
-            <slot name="image" />
+          <div class="overflow-hidden rounded-t-xl">
+            <Image
+              src={p.data.image}
+              alt={p.data.alt}
+              class="aspect-video w-full rounded-t-xl group-hover:scale-105"
+            />
           </div>
 
-          <div class="flex h-[35%] flex-col items-start justify-between p-5">
+          <div class="space-y-3 p-5">
             <h3 class="text-2xl font-bold duration-300 group-hover:text-(--accent)">
               {p.data.title}
             </h3>
-            <p class="font-inter text-sm text-(--text-muted)">{p.data.desc}</p>
-            <div class="flex flex-nowrap items-center gap-2">
-              <Tag size={18} class="shrink-0" />
-              {p.data.tags.length > 5
-                ? p.data.displayedTags.map((tag: Project, i: Project) => (
-                    <span
-                      class={`shrink-0 bg-(--tag) px-2 py-2 font-mono text-xs font-bold ${tagColors[i % tagColors.length]}`}
-                    >
-                      {tag}
-                    </span>
-                  ))
-                : p.data.tags.map((tag: Project, i: Project) => (
-                    <span
-                      class={`shrink-0 bg-(--tag) px-2 py-2 font-mono text-xs font-bold ${tagColors[i % tagColors.length]}`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
+            <p class="font-inter line-clamp-2 text-sm text-(--text-muted)">
+              {p.data.desc}
+            </p>
+            <div class="flex items-center gap-x-2 pt-1">
+              <div class="flex max-h-8 flex-wrap gap-2 overflow-hidden pt-2">
+                <Tag size={18} class="shrink-0" />
+                {p.data.tags.map((tag: Project, i: Project) => (
+                  <span
+                    class={`rounded bg-(--tag) px-2 py-2 font-mono text-xs font-semibold ${tagColors[i % tagColors.length]}`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </a>
