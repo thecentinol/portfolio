@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Github, Mail } from "@lucide/astro";
+---
+
+<Layout>
+  <article
+    class="prose prose-invert mx-auto min-h-screen w-[75vw] space-y-6 pt-20"
+  >
+    <h1 class="text-6xl font-bold">About Me</h1>
+    <p>I'm Slade, a self-taught full-stack developer based in South Africa.</p>
+    <p>
+      I started learning to code in mid-2025 with no prior experience — just
+      curiosity and a lot of time in the terminal. In under a year I went from
+      zero to building full-stack applications with custom authentication, REST
+      APIs, and real databases. Not because I followed a curriculum, but because
+      I kept asking "how does this actually work?" and refused to stop until I
+      had an answer.
+    </p>
+    <p>
+      That curiosity is how I work. I don't copy-paste solutions. I dig in,
+      figure out the fundamentals, and build things properly.
+    </p>
+    <p>
+      Outside of web development I'm deep into Linux — I daily drive Arch (btw)
+      with a custom Hyprland setup — and I'm learning ethical hacking and
+      security in my spare time. I'm drawn to understanding how systems work at
+      a lower level, which makes me a better developer at every level above it.
+    </p>
+    <p>
+      What I build tends to be practical. A CRM for a real estate business. A
+      local UI for testing language models. A restaurant site with smooth
+      transitions and a real reservations flow. I'm not interested in
+      impressive-looking demos that don't do anything — I care about software
+      that actually works for the people using it.
+    </p>
+    <p>
+      If you're a business that needs something built, or a team looking for
+      someone who learns fast and takes the work seriously — I'd love to talk.
+    </p>
+    <div class="not-prose flex items-center gap-4">
+      <a
+        href="https://github.com/thecentinol"
+        rel="noopener noreferrer"
+        target="_blank"
+        class="flex items-center gap-2 hover:text-(--accent)"
+      >
+        <Github size={20} />
+        Github
+      </a>
+
+      <a
+        href="mailto:centinol@proton.me"
+        rel="noopener noreferrer"
+        target="_blank"
+        class="flex items-center gap-2 hover:text-(--accent)"
+      >
+        <Mail size={20} />
+        Email
+      </a>
+    </div>
+  </article>
+</Layout>
