@@ -1,23 +1,14 @@
 ---
-import { Star, ArrowRight, Tag } from "@lucide/astro";
+import { Star, ArrowRight } from "@lucide/astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
+import ProjectTags from "@components/projects/ProjectTags.astro";
 
 const projects = await getCollection(
   "projects",
   ({ data }: CollectionEntry<"projects">) => data.featured === true,
 );
 type Project = CollectionEntry<"projects">;
-
-const tagColors = [
-  "text-[#8839ef]",
-  "text-[#ef9f76]",
-  "text-[#40a02b]",
-  "text-[#179299]",
-  "text-[#1e66f5]",
-  "text-[#dc8a78]",
-  "text-[#d20f39]",
-];
 ---
 
 <section class="mx-auto mb-8 max-h-screen w-[75vw] space-y-10">
@@ -39,14 +30,14 @@ const tagColors = [
     {
       projects.map((p: Project) => (
         <a
-          href={`/projects/${p.slug}`}
+          href={`/projects/${p.id}`}
           class="group cursor-pointer rounded-xl border border-(--border) bg-(--fg) duration-400 hover:border-(--accent)"
         >
           <div class="overflow-hidden rounded-t-xl">
             <Image
               src={p.data.image}
               alt={p.data.alt}
-              class="aspect-video w-full rounded-t-xl group-hover:scale-105"
+              class="aspect-video w-full rounded-t-xl transition-all duration-300 group-hover:scale-105"
             />
           </div>
 
@@ -58,16 +49,7 @@ const tagColors = [
               {p.data.desc}
             </p>
             <div class="flex items-center gap-x-2 pt-1">
-              <div class="flex max-h-8 flex-wrap gap-2 overflow-hidden pt-2">
-                <Tag size={18} class="shrink-0" />
-                {p.data.tags.map((tag: Project, i: Project) => (
-                  <span
-                    class={`rounded bg-(--tag) px-2 py-2 font-mono text-xs font-semibold ${tagColors[i % tagColors.length]}`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              <ProjectTags tags={p.data.tags} />
             </div>
           </div>
         </a>

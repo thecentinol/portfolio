@@ -1,0 +1,31 @@
+---
+import { Tag } from "@lucide/astro";
+
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+const tagColors = [
+  "text-[#8839ef]",
+  "text-[#ef9f76]",
+  "text-[#40a02b]",
+  "text-[#179299]",
+  "text-[#1e66f5]",
+  "text-[#dc8a78]",
+  "text-[#d20f39]",
+];
+---
+
+<div class="flex max-h-8 flex-wrap gap-2 overflow-hidden">
+  <Tag size={18} class="shrink-0" />
+  {
+    tags.map((tag, i) => (
+      <span
+        class={`shrink-0 bg-(--tag) px-2 py-2 font-mono text-xs font-bold ${tagColors[i % tagColors.length]}`}
+      >
+        {tag}
+      </span>
+    ))
+  }
+</div>

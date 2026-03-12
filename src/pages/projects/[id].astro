@@ -1,21 +1,38 @@
 ---
 import { getEntry, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-export const prerender = false;
+import ProjectTags from "@components/projects/ProjectTags.astro";
+import { Github, ExternalLink, CalendarDays } from "@lucide/astro";
 
 const { id } = Astro.params;
 const project = await getEntry("projects", id);
 if (!project) return Astro.redirect("/404");
-const { title, desc, tags, github, live } = project.data;
+
+const { title, tags, github, live } = project.data;
 const { Content } = await render(project);
 ---
 
 <Layout>
   <div class="mx-auto min-h-screen w-[75vw] pt-20">
     <h1>{title}</h1>
-    <p>{desc}</p>
+    <div class="flex items-center gap-2">
+      <CalendarDays />
 
-    <div class="prose prose-invert prose-a:text-(--accent) max-w-2xl">
+      <a href="" class="text-(--accent)">
+        <Github />
+      </a>
+
+      <a href="" class="text-(--accent)">
+        <ExternalLink />
+      </a>
+    </div>
+    <div class="flex items-center gap-x-2">
+      <ProjectTags tags={tags} />
+    </div>
+
+    <div
+      class="prose prose-invert prose-a:text-(--accent) mt-6 max-w-2xl border-t border-(--text-muted) pt-6"
+    >
       <Content />
     </div>
   </div>
