@@ -1,6 +1,7 @@
 ---
 title: "AgentFlux"
 desc: "CRM built for real estate. Custom RSA-256 auth, JWT tokens, and PostgreSQL CRUD — all from scratch."
+date: 2025-09-15
 image: "../../static/agentflux.webp"
 alt: "Agentflux image"
 tags:

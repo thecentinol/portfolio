@@ -2,36 +2,63 @@
 import { getEntry, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import ProjectTags from "@components/projects/ProjectTags.astro";
+import { Image } from "astro:assets";
 import { Github, ExternalLink, CalendarDays } from "@lucide/astro";
+import formatDate from "../../utils/date";
 
 const { id } = Astro.params;
 const project = await getEntry("projects", id);
 if (!project) return Astro.redirect("/404");
 
-const { title, tags, github, live } = project.data;
+const { image, alt, date, title, tags, github, live } = project.data;
 const { Content } = await render(project);
 ---
 
 <Layout>
-  <div class="mx-auto min-h-screen w-[75vw] pt-20">
-    <h1>{title}</h1>
-    <div class="flex items-center gap-2">
-      <CalendarDays />
-
-      <a href="" class="text-(--accent)">
-        <Github />
-      </a>
-
-      <a href="" class="text-(--accent)">
-        <ExternalLink />
-      </a>
+  <div class="mx-auto min-h-screen w-[42vw] space-y-10 pt-20">
+    <!-- banner image -->
+    <div class="overflow-hidden">
+      <Image src={image} alt={alt} class="aspect-video rounded-xl" />
     </div>
-    <div class="flex items-center gap-x-2">
+    <!-- basic info -->
+    <h1 class="text-6xl font-bold text-(--accent)">{title}</h1>
+    <div class="flex items-center gap-2">
+      <span class="flex items-center gap-2 text-(--text-muted)">
+        <CalendarDays size={18} />
+        {formatDate(date)}
+      </span>
+      {
+        github && (
+          <a
+            href={github}
+            rel="noopener noreferrer"
+            target="_blank"
+            class="text-(--accent)"
+          >
+            <Github size={18} />
+          </a>
+        )
+      }
+      {
+        live && (
+          <a
+            href={live}
+            rel="noopener noreferrer"
+            target="_blank"
+            class="text-(--accent)"
+          >
+            <ExternalLink size={18} />
+          </a>
+        )
+      }
+    </div>
+    <!-- Tags -->
+    <div class="flex items-center justify-start gap-x-2">
       <ProjectTags tags={tags} />
     </div>
-
+    <!-- mardown body -->
     <div
-      class="prose prose-invert prose-a:text-(--accent) mt-6 max-w-2xl border-t border-(--text-muted) pt-6"
+      class="prose prose-invert prose-h1:font-normal prose-h2:font-normal prose-h3:font-normal prose-h3:text-(--accent) prose-h2:text-(--accent) prose-h1:text-5xl prose-h1:text-(--accent) prose-a:text-(--accent) mt-6 max-w-2xl border-t border-(--text-muted) pt-6"
     >
       <Content />
     </div>

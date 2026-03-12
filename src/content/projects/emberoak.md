@@ -1,9 +1,11 @@
 ---
 title: "Ember & Oak"
 desc: "A demo multi-page site for a Cape Town wood-fired restaurant."
+date: 2026-01-14
 image: "../../static/ember-oak.webp"
 alt: "Ember & Oak image"
 tags: ["Astro", "Typescript", "Motion"]
+live: "https://embero.vercel.app/"
 ---
 
 # Ember & Oak

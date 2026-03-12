@@ -1,9 +1,11 @@
 ---
 title: "SermoUI"
 desc: "A local web interface for running and testing LLMs. Supports model switching, conversation history, and streaming responses."
+date: 2025-01-23
 image: "../../static/sermoui.webp"
 alt: "SermoUI image"
 tags: ["React", "Typescript", "Ollama API", Zustand]
+github: "https://github.com/thecentinol/SermoUI"
 featured: true
 ---
 

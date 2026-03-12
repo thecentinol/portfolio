@@ -1,6 +1,7 @@
 ---
 title: "Portfolio"
 desc: "The website you're currently on. My personal portfolio site."
+date: 2026-03-07
 image: "../../static/portfolio.webp"
 alt: "Portfolio image"
 tags: ["Astro", "Typescript", "TailwinCSS"]

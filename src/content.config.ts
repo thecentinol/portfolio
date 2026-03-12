@@ -8,12 +8,12 @@ const projects = defineCollection({
 		z.object({
 			title: z.string(),
 			desc: z.string(),
+			date: z.coerce.date(),
 			image: image(),
 			alt: z.string(),
 			tags: z.array(z.string()),
 			github: z.string().url().optional(),
 			live: z.string().url().optional(),
-			problem: z.string().optional(),
 			featured: z.boolean().default(false),
 		}),
 });
