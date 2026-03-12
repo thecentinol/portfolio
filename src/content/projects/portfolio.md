@@ -1,6 +1,6 @@
 ---
 title: "Portfolio"
-desc: "The website you're currently on. My personal portfolio site."
+desc: "My crack at the task of creating a personal portfolio website... The one you're currently browsing."
 date: 2026-03-07
 image: "../../static/portfolio.webp"
 alt: "Portfolio image"

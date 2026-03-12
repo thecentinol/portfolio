@@ -1,6 +1,6 @@
 ---
 title: "Ember & Oak"
-desc: "A demo multi-page site for a Cape Town wood-fired restaurant."
+desc: "Brochure website (demo) for a Cape Town wood-fired restaurant. Multi-page with animated transitions, reservations flow, menu, and gallery."
 date: 2026-01-14
 image: "../../static/ember-oak.webp"
 alt: "Ember & Oak image"
