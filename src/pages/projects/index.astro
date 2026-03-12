@@ -10,9 +10,13 @@ type Project = CollectionEntry<"projects">;
 ---
 
 <Layout>
-  <div class="mx-auto min-h-screen w-[75vw] space-y-8 pt-20">
-    <h1 class="flex items-center gap-4 text-6xl font-bold">
-      <Folders size={40} class="text-(--accent)" />
+  <div
+    class="xs:w-[85vw] mx-auto min-h-screen space-y-8 pt-20 sm:w-[88vw] md:w-[85vw] lg:w-[75vw]"
+  >
+    <h1
+      class="xs:text-3xl flex items-center gap-4 font-bold sm:text-4xl md:text-5xl lg:text-6xl"
+    >
+      <Folders size={36} class="shrink-0 text-(--accent)" />
       Projects
     </h1>
 

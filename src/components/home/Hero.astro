@@ -2,24 +2,28 @@
 import { Github, Mail, MapPin, Clock } from "@lucide/astro";
 ---
 
-<section class="mx-auto flex h-[85vh] w-[75vw] items-center justify-between">
-  <div class="space-y-8">
+<section
+  class="xs:w-[85vw] mx-auto flex h-[85vh] items-center justify-between sm:w-[88vw] md:w-[85vw] lg:w-[75vw]"
+>
+  <div class="xs:space-y-10 md:space-y-8">
     <div class="flex items-center gap-2 text-(--accent)">
       <hr class="h-px w-10 bg-(--accent)" />
-      <span class="text-xs tracking-[0.20rem]"> FULL STACK DEVELOPER </span>
+      <span class="text-xs tracking-[0.20rem]">FULL STACK DEVELOPER</span>
     </div>
     <div>
-      <h1 class="mb-2 text-6xl font-bold">
-        Hey, I'm Slade <span
+      <h1 class="xs:text-4xl mb-2 font-bold sm:text-5xl md:text-6xl">
+        Hey, I'm Slade
+        <span
           class="inline-block origin-[70%_70%] hover:animate-[wiggle_0.6s_ease-in-out]"
-          >👋</span
         >
+          👋
+        </span>
       </h1>
-      <p class="font-mono text-3xl text-(--text-muted) italic">
+      <p class="font-mono text-2xl text-(--text-muted) italic md:text-3xl">
         I build things for the web.
       </p>
     </div>
-    <p class="max-w-xl text-(--text-muted)">
+    <p class="xs:text-xl text-md max-w-xl text-(--text-muted)">
       I build <strong class="text-(--text)">web apps and internal tools</strong> —
       from the interface down to the backend and database. Based in South Africa,
       working with clients globally. Currently building{" "}<a
@@ -28,14 +32,31 @@ import { Github, Mail, MapPin, Clock } from "@lucide/astro";
         >Agentflux</a
       >.
     </p>
-    <button
-      onclick="window.location.href='/projects'"
-      class="cursor-pointer rounded-md bg-(--accent) px-6 py-3 text-sm text-black"
-    >
-      View projects
-    </button>
 
-    <div class="font-inter flex items-center gap-4 text-(--text-muted)">
+    <div class="xs:flex items-center gap-2 text-(--text-muted) md:hidden">
+      <a
+        class="flex items-center gap-2"
+        href="https://github.com/thecentinol"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <Github />
+        GitHub
+      </a>
+      <a
+        class="flex items-center gap-2"
+        href="mailto:centinol@proton.me"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <Mail />
+        Email
+      </a>
+    </div>
+
+    <div
+      class="font-inter flex flex-wrap items-center gap-4 text-(--text-muted)"
+    >
       <span class="flex items-center gap-2">
         <MapPin class="text-(--accent)" />
         South Africa
@@ -51,7 +72,7 @@ import { Github, Mail, MapPin, Clock } from "@lucide/astro";
     </div>
   </div>
 
-  <div class="flex flex-col items-center gap-2 text-(--text-muted)">
+  <div class="hidden flex-col items-center gap-2 text-(--text-muted) md:flex">
     <hr class="h-12 w-px bg-(--text-muted)" />
     <a
       class="cursor-pointer hover:text-(--accent)"

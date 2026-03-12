@@ -15,13 +15,17 @@ const { Content } = await render(project);
 ---
 
 <Layout>
-  <div class="mx-auto min-h-screen w-[42vw] space-y-10 pt-20">
+  <div
+    class="xs:w-[85vw] mx-auto min-h-screen space-y-10 pt-20 sm:w-[88vw] md:w-[65vw] lg:w-[42vw]"
+  >
     <!-- banner image -->
     <div class="overflow-hidden">
       <Image src={image} alt={alt} class="aspect-video rounded-xl" />
     </div>
     <!-- basic info -->
-    <h1 class="text-6xl font-bold text-(--accent)">{title}</h1>
+    <h1 class="xs:text-3xl font-bold text-(--accent) sm:text-5xl lg:text-6xl">
+      {title}
+    </h1>
     <div class="flex items-center gap-2">
       <span class="flex items-center gap-2 text-(--text-muted)">
         <CalendarDays size={18} />
