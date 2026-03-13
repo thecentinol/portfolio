@@ -8,19 +8,19 @@ import formatDate from "../../utils/date";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
-  return projects.map((project) => {
+  return projects.map((project) => ({
     params: {
-      id: project.id;
+    id: project.id,
     }
-  });
-}
+  }));
 
 const { id } = Astro.params;
-const project = await getEntry("projects", id);
+if (!id) return Astro.redirect("/404")
+const project = await getEntry("projects", id!);
 if (!project) return Astro.redirect("/404");
 
-const { image, alt, date, title, tags, github, live } = project.data;
-const { Content } = await render(project);
+const { image, alt, date, title, tags, github, live } = project!.data;
+const { Content } = await render(project!);
 ---
 
 <Layout>
