@@ -1,10 +1,19 @@
 ---
-import { getEntry, render } from "astro:content";
+import { getEntry, render, getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import ProjectTags from "@components/projects/ProjectTags.astro";
 import { Image } from "astro:assets";
 import { Github, ExternalLink, CalendarDays } from "@lucide/astro";
 import formatDate from "../../utils/date";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => {
+    params: {
+      id: project.id;
+    }
+  });
+}
 
 const { id } = Astro.params;
 const project = await getEntry("projects", id);
