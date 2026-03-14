@@ -11,11 +11,9 @@ const projects = await getCollection(
 type Project = CollectionEntry<"projects">;
 ---
 
-<section
-  class="xs:mb-0 xs:min-h-[80vh] xs:w-[85vw] mx-auto space-y-10 sm:min-h-[50vh] sm:w-[88vw] md:mb-8 md:min-h-[40vh] md:w-[85vw] lg:w-[75vw]"
->
+<section class="xs:px-6 xs:pb-10 mx-auto max-w-6xl space-y-10 md:py-0">
   <div class="flex items-center justify-between">
-    <h2 class="xs:text-3xl flex items-center gap-2 font-bold sm:text-4xl">
+    <h2 class="xs:text-2xl flex items-center gap-2 font-bold sm:text-4xl">
       <Star size={30} class="text-(--accent)" />
       Featured Projects
     </h2>
