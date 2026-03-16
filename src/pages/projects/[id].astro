@@ -28,10 +28,18 @@ const { Content } = await render(project!);
   <div class="mx-auto max-w-2xl space-y-10 px-6 py-22">
     <!-- banner image -->
     <div class="overflow-hidden">
-      <Image src={image} alt={alt} class="aspect-video rounded-xl" />
+      <Image
+        src={image}
+        alt={alt}
+        class="aspect-video rounded-xl"
+        style={`view-transition-name: proj-img-${id}`}
+      />
     </div>
     <!-- basic info -->
-    <h1 class="xs:text-3xl font-bold text-(--accent) sm:text-5xl lg:text-6xl">
+    <h1
+      class="xs:text-3xl font-bold text-(--accent) sm:text-5xl lg:text-6xl"
+      style={`view-transition-name: proj-h-${id}`}
+    >
       {title}
     </h1>
     <div class="flex items-center gap-2">

@@ -38,11 +38,15 @@ type Project = CollectionEntry<"projects">;
               src={p.data.image}
               alt={p.data.alt}
               class="aspect-video w-full rounded-t-xl transition-all duration-300 group-hover:scale-105"
+              style={`view-transition-name: proj-img-${p.id}`}
             />
           </div>
 
           <div class="space-y-3 p-5">
-            <h3 class="text-2xl font-bold duration-300 group-hover:text-(--accent)">
+            <h3
+              class="text-2xl font-bold duration-300 group-hover:text-(--accent)"
+              style={`view-transition-name: proj-h-${p.id}`}
+            >
               {p.data.title}
             </h3>
             <p class="font-inter line-clamp-2 text-sm text-(--text-muted)">
