@@ -1,0 +1,113 @@
+:root {
+  --rosepine-main-base: #191724;
+  --rosepine-main-surface: #1f1d2e;
+  --rosepine-main-overlay: #26233a;
+  --rosepine-main-muted: #6e6a86;
+  --rosepine-main-subtle: #908caa;
+  --rosepine-main-text: #e0def4;
+  --rosepine-main-love: #eb6f92;
+  --rosepine-main-gold: #f6c177;
+  --rosepine-main-rose: #ebbcba;
+  --rosepine-main-pine: #31748f;
+  --rosepine-main-foam: #9ccfd8;
+  --rosepine-main-iris: #c4a7e7;
+  --rosepine-main-highlight-low: #21202e;
+  --rosepine-main-highlight-med: #403d52;
+  --rosepine-main-highlight-high: #524f67;
+
+  --rosepine-moon-base: #232136;
+  --rosepine-moon-surface: #2a273f;
+  --rosepine-moon-overlay: #393552;
+  --rosepine-moon-muted: #6e6a86;
+  --rosepine-moon-subtle: #908caa;
+  --rosepine-moon-text: #e0def4;
+  --rosepine-moon-love: #eb6f92;
+  --rosepine-moon-gold: #f6c177;
+  --rosepine-moon-rose: #ea9a97;
+  --rosepine-moon-pine: #3e8fb0;
+  --rosepine-moon-foam: #9ccfd8;
+  --rosepine-moon-iris: #c4a7e7;
+  --rosepine-moon-highlight-low: #2a283e;
+  --rosepine-moon-highlight-med: #44415a;
+  --rosepine-moon-highlight-high: #56526e;
+
+  --rosepine-dawn-base: #faf4ed;
+  --rosepine-dawn-surface: #fffaf3;
+  --rosepine-dawn-overlay: #f2e9e1;
+  --rosepine-dawn-muted: #9893a5;
+  --rosepine-dawn-subtle: #797593;
+  --rosepine-dawn-text: #575279;
+  --rosepine-dawn-love: #b4637a;
+  --rosepine-dawn-gold: #ea9d34;
+  --rosepine-dawn-rose: #d7827e;
+  --rosepine-dawn-pine: #286983;
+  --rosepine-dawn-foam: #56949f;
+  --rosepine-dawn-iris: #907aa9;
+  --rosepine-dawn-highlight-low: #f4ede8;
+  --rosepine-dawn-highlight-med: #dfdad9;
+  --rosepine-dawn-highlight-high: #cecacd;
+}
+
+@theme inline {
+  --color-*: initial;
+  --color-accent: var(--rosepine-color-gold);
+
+  --color-love: var(--rosepine-color-love);
+  --color-gold: var(--rosepine-color-gold);
+  --color-rose: var(--rosepine-color-rose);
+  --color-pine: var(--rosepine-color-pine);
+  --color-foam: var(--rosepine-color-foam);
+  --color-iris: var(--rosepine-color-iris);
+  --color-bg: var(--rosepine-bg);
+  --color-fg: var(--rosepine-fg);
+  --color-overlay: var(--rosepine-overlay);
+  --color-text: var(--rosepine-text);
+  --color-muted: var(--rosepine-muted);
+  --color-border: var(--rosepine-border);
+}
+
+@layer base {
+  :root {
+    --rosepine-bg: var(--rosepine-main-base);
+    --rosepine-fg: var(--rosepine-main-surface);
+    --rosepine-overlay: var(--rosepine-main-overlay);
+    --rosepine-text: var(--rosepine-main-text);
+    --rosepine-muted: var(--rosepine-main-muted);
+    --rosepine-border: var(--rosepine-main-highlight-high);
+    --rosepine-color-love: var(--rosepine-main-love);
+    --rosepine-color-gold: var(--rosepine-main-gold);
+    --rosepine-color-rose: var(--rosepine-main-rose);
+    --rosepine-color-pine: var(--rosepine-main-pine);
+    --rosepine-color-foam: var(--rosepine-main-foam);
+    --rosepine-color-iris: var(--rosepine-main-iris);
+  }
+  [data-theme="moon"] {
+    --rosepine-bg: var(--rosepine-moon-base);
+    --rosepine-fg: var(--rosepine-moon-surface);
+    --rosepine-overlay: var(--rosepine-moon-overlay);
+    --rosepine-text: var(--rosepine-moon-text);
+    --rosepine-muted: var(--rosepine-moon-muted);
+    --rosepine-border: var(--rosepine-moon-highlight-high);
+    --rosepine-color-love: var(--rosepine-moon-love);
+    --rosepine-color-gold: var(--rosepine-moon-gold);
+    --rosepine-color-rose: var(--rosepine-moon-rose);
+    --rosepine-color-pine: var(--rosepine-moon-pine);
+    --rosepine-color-foam: var(--rosepine-moon-foam);
+    --rosepine-color-iris: var(--rosepine-moon-iris);
+  }
+
+  [data-theme="dawn"] {
+    --rosepine-bg: var(--rosepine-dawn-base);
+    --rosepine-fg: var(--rosepine-dawn-surface);
+    --rosepine-overlay: var(--rosepine-dawn-overlay);
+    --rosepine-text: var(--rosepine-dawn-text);
+    --rosepine-muted: var(--rosepine-dawn-muted);
+    --rosepine-border: var(--rosepine-dawn-highlight-high);
+    --rosepine-color-love: var(--rosepine-dawn-love);
+    --rosepine-color-gold: var(--rosepine-dawn-gold);
+    --rosepine-color-rose: var(--rosepine-dawn-rose);
+    --rosepine-color-pine: var(--rosepine-dawn-pine);
+    --rosepine-color-foam: var(--rosepine-dawn-foam);
+    --rosepine-color-iris: var(--rosepine-dawn-iris);
+  }
+}

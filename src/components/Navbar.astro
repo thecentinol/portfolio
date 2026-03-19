@@ -15,7 +15,7 @@ const crumbs = segments.map((seg, i) => ({
 >
   <!-- Breadcrumbs -->
   <div class="flex items-center gap-1">
-    <a href="/" class="text-(--accent)">~</a>
+    <a href="/" class="text-accent">~</a>
     {
       crumbs.map((crumb, i) => (
         <>
@@ -23,20 +23,19 @@ const crumbs = segments.map((seg, i) => ({
           {i === crumbs.length - 1 ? (
             <span>{crumb.label}</span>
           ) : (
-            <a href={crumb.href} class="hover:text-(--accent)">
+            <a href={crumb.href} class="hover:text-accent">
               {crumb.label}
             </a>
           )}
         </>
       ))
     }
-    <div class="h-4 w-2 animate-pulse bg-(--accent) [animation-duration:3s]">
-    </div>
+    <div class="bg-accent h-4 w-2 animate-pulse [animation-duration:3s]"></div>
   </div>
   <!-- Navlinks -->
   <ul class="hidden items-center gap-8 md:flex">
-    <li><a href="/about" class="hover:text-(--accent)">About</a></li>
-    <li><a href="/projects" class="hover:text-(--accent)">Projects</a></li>
+    <li><a href="/about" class="hover:text-accent">About</a></li>
+    <li><a href="/projects" class="hover:text-accent">Projects</a></li>
   </ul>
   <!-- Sidebar trigger-->
   <button id="sidebar-trigger" class="block md:hidden">

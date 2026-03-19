@@ -1,42 +1,21 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@import "@fontsource/space-grotesk";
-@import "@fontsource/inter";
-@import "@fontsource/instrument-serif";
+@import "./rosepine.css";
+@import "./colors.css";
 
-:root {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-dmsans);
-  --bg: #0f1117;
-  --fg: #161b27;
-  --border: #1e2433;
-  --tag: #1f232f;
-  --accent: #4f8ef7;
-  --text: #f0f4ff;
-  --text-muted: #8892a4;
-}
+@custom-variant moon (&:where([data-theme="moon"] *));
+@custom-variant dawn (&:where([data-theme="dawn"] *));
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-syne);
-}
+@layer base {
+  body {
+    background-color: var(--rosepine-bg);
+    color: var(--rosepine-text);
+    font-family: var(--font-dmsans);
+  }
 
-.font-syne {
-  font-family: var(--font-syne);
-  font-weight: bold;
-}
-
-.font-mono {
-  font-family: var(--font-ibm);
-}
-
-@theme {
-  --breakpoint-xs: 300px;
+  ::selection {
+    background-color: var(--rosepine-highlight-med);
+  }
 }
 
 @keyframes wiggle {

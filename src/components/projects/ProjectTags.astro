@@ -1,28 +1,29 @@
 ---
 import { Tag } from "@lucide/astro";
+import { getRandomTagColor } from "../../utils/tagColor";
 
 interface Props {
   tags: string[];
 }
 
 const { tags } = Astro.props;
-const tagColors = [
-  "text-[#dc8a78]",
-  "text-[#dd7878]",
-  "text-[#ea76cb]",
-  "text-[#8839ef]",
-  "text-[#d20f39]",
-  "text-[#e64553]",
-  "text-[#fe640b]",
-];
+const tagColors =
+  tags.reduce(
+    (acc, tag) => {
+      acc[tag] = getRandomTagColor();
+      return acc;
+    },
+    {} as Record<string, string>,
+  ) || {};
 ---
 
 <div class="flex max-h-8 flex-wrap gap-2 overflow-hidden">
   <Tag size={18} class="shrink-0" />
   {
-    tags.map((tag, i) => (
+    tags.map((tag) => (
       <span
-        class={`shrink-0 rounded bg-(--tag) px-2 py-2 font-mono text-xs font-bold ${tagColors[i % tagColors.length]}`}
+        class="shrink-0 rounded bg-(--tag) px-2 py-2 font-mono text-xs font-bold"
+        style={`color: var(--color-${tagColors[tag]})`}
       >
         {tag}
       </span>

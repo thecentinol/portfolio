@@ -31,7 +31,7 @@ type Project = CollectionEntry<"projects">;
       projects.map((p: Project) => (
         <a
           href={`/projects/${p.id}`}
-          class="group cursor-pointer rounded-xl border border-(--border) bg-(--fg) duration-400 hover:border-(--accent)"
+          class="group border-border hover:border-accent cursor-pointer rounded-xl border bg-(--fg) duration-400"
         >
           <div class="overflow-hidden rounded-t-xl">
             <Image

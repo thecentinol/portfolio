@@ -15,10 +15,13 @@ import Navbar from "../components/Navbar.astro";
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>Slade.dev</title>
-    <Font cssVariable="--font-syne" />
     <Font cssVariable="--font-dmsans" />
-    <Font cssVariable="--font-ibm" />
     <ClientRouter />
+
+    <script is:inline astro:before-preparation>
+      const theme = localStorage.getItem("theme") || "main";
+      document.documentElement.setAttribute("data-theme", theme);
+    </script>
   </head>
   <body class="px-6">
     <Navbar />

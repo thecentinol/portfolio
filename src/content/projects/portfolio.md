@@ -5,6 +5,7 @@ date: 2026-03-07
 image: "../../static/portfolio.webp"
 alt: "Portfolio image"
 tags: ["Astro", "Typescript", "TailwinCSS"]
+github: "https://github.com/thecentinol/portfolio"
 ---
 
 # Portfolio

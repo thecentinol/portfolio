@@ -1,0 +1,8 @@
+@theme static {
+  --color-love: var(--rosepine-color-love);
+  --color-gold: var(--rosepine-color-gold);
+  --color-rose: var(--rosepine-color-rose);
+  --color-pine: var(--rosepine-color-pine);
+  --color-foam: var(--rosepine-color-foam);
+  --color-iris: var(--rosepine-color-iris);
+}
