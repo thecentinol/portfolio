@@ -63,6 +63,7 @@
   --color-overlay: var(--rosepine-overlay);
   --color-text: var(--rosepine-text);
   --color-muted: var(--rosepine-muted);
+  --color-subtle: var(--rosepine-subtle);
   --color-border: var(--rosepine-border);
 }
 
@@ -73,6 +74,7 @@
     --rosepine-overlay: var(--rosepine-main-overlay);
     --rosepine-text: var(--rosepine-main-text);
     --rosepine-muted: var(--rosepine-main-muted);
+    --rosepine-subtle: var(--rosepine-main-subtle);
     --rosepine-border: var(--rosepine-main-highlight-high);
     --rosepine-color-love: var(--rosepine-main-love);
     --rosepine-color-gold: var(--rosepine-main-gold);
@@ -87,6 +89,7 @@
     --rosepine-overlay: var(--rosepine-moon-overlay);
     --rosepine-text: var(--rosepine-moon-text);
     --rosepine-muted: var(--rosepine-moon-muted);
+    --rosepine-subtle: var(--rosepine-moon-subtle);
     --rosepine-border: var(--rosepine-moon-highlight-high);
     --rosepine-color-love: var(--rosepine-moon-love);
     --rosepine-color-gold: var(--rosepine-moon-gold);
@@ -102,6 +105,7 @@
     --rosepine-overlay: var(--rosepine-dawn-overlay);
     --rosepine-text: var(--rosepine-dawn-text);
     --rosepine-muted: var(--rosepine-dawn-muted);
+    --rosepine-subtle: var(--rosepine-dawn-subtle);
     --rosepine-border: var(--rosepine-dawn-highlight-high);
     --rosepine-color-love: var(--rosepine-dawn-love);
     --rosepine-color-gold: var(--rosepine-dawn-gold);

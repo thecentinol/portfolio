@@ -37,13 +37,13 @@ const { Content } = await render(project!);
     </div>
     <!-- basic info -->
     <h1
-      class="xs:text-3xl font-bold text-(--accent) sm:text-5xl lg:text-6xl"
+      class="xs:text-3xl text-accent font-bold sm:text-5xl lg:text-6xl"
       style={`view-transition-name: proj-h-${id}`}
     >
       {title}
     </h1>
     <div class="flex items-center gap-2">
-      <span class="flex items-center gap-2 text-(--text-muted)">
+      <span class="text-subtle flex items-center gap-2">
         <CalendarDays size={18} />
         {formatDate(date)}
       </span>
@@ -53,7 +53,7 @@ const { Content } = await render(project!);
             href={github}
             rel="noopener noreferrer"
             target="_blank"
-            class="text-(--accent)"
+            class="text-accent"
           >
             <Github size={18} />
           </a>
@@ -65,7 +65,7 @@ const { Content } = await render(project!);
             href={live}
             rel="noopener noreferrer"
             target="_blank"
-            class="text-(--accent)"
+            class="text-accent"
           >
             <ExternalLink size={18} />
           </a>
@@ -78,7 +78,7 @@ const { Content } = await render(project!);
     </div>
     <!-- mardown body -->
     <div
-      class="prose prose-invert prose-h1:font-normal prose-h2:font-normal prose-h3:font-normal prose-h3:text-(--accent) prose-h2:text-(--accent) prose-h1:text-5xl prose-h1:text-(--accent) prose-a:text-(--accent) mt-6 max-w-2xl border-t border-(--text-muted) pt-6"
+      class="prose prose-invert prose-h1:font-normal prose-h2:font-normal prose-h3:font-normal prose-h1:text-4xl prose-h1:text-accent prose-h2:text-accent prose-h3:text-accent prose-a:text-accent border-border mt-6 max-w-2xl border-t pt-6"
     >
       <Content />
     </div>

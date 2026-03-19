@@ -14,12 +14,12 @@ type Project = CollectionEntry<"projects">;
 <section class="xs:pb-10 mx-auto max-w-6xl space-y-10 md:pb-0">
   <div class="flex items-center justify-between">
     <h2 class="xs:text-2xl flex items-center gap-2 font-bold sm:text-4xl">
-      <Star size={30} class="text-(--accent)" />
+      <Star size={30} class="text-accent" />
       Featured Projects
     </h2>
     <a
       href="/projects"
-      class="group hidden cursor-pointer items-center gap-2 text-sm text-(--accent) underline decoration-dashed underline-offset-4 md:flex"
+      class="group text-accent hidden cursor-pointer items-center gap-2 text-sm underline decoration-dashed underline-offset-4 md:flex"
     >
       View All
       <ArrowRight size={18} class="duration-300 group-hover:translate-x-1" />
@@ -31,7 +31,7 @@ type Project = CollectionEntry<"projects">;
       projects.map((p: Project) => (
         <a
           href={`/projects/${p.id}`}
-          class="group border-border hover:border-accent cursor-pointer rounded-xl border bg-(--fg) duration-400"
+          class="group border-border hover:border-accent bg-bg cursor-pointer rounded-xl border duration-400"
         >
           <div class="overflow-hidden rounded-t-xl">
             <Image
@@ -44,14 +44,12 @@ type Project = CollectionEntry<"projects">;
 
           <div class="space-y-3 p-5">
             <h3
-              class="text-2xl font-bold duration-300 group-hover:text-(--accent)"
+              class="group-hover:text-accent text-2xl font-bold duration-300"
               style={`view-transition-name: proj-h-${p.id}`}
             >
               {p.data.title}
             </h3>
-            <p class="font-inter line-clamp-2 text-sm text-(--text-muted)">
-              {p.data.desc}
-            </p>
+            <p class="text-text/70 line-clamp-2 text-sm">{p.data.desc}</p>
             <div class="flex items-center gap-x-2 pt-1">
               <ProjectTags tags={p.data.tags} />
             </div>
@@ -63,7 +61,7 @@ type Project = CollectionEntry<"projects">;
 
   <a
     href="/projects"
-    class="xs:flex cursor-pointer items-center justify-center gap-2 text-sm text-(--accent) md:hidden"
+    class="xs:flex text-accent cursor-pointer items-center justify-center gap-2 text-sm md:hidden"
   >
     View all projects
     <ArrowRight size={18} />

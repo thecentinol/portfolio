@@ -14,9 +14,9 @@ type Project = CollectionEntry<"projects">;
     class="xs:py-20 xs:px-6 mx-auto max-w-6xl space-y-8 py-0 sm:py-22 lg:px-0"
   >
     <h1
-      class="xs:text-3xl flex items-center gap-4 font-bold sm:text-4xl md:text-5xl lg:text-6xl"
+      class="xs:text-3xl flex items-center gap-4 font-bold sm:text-4xl md:text-5xl"
     >
-      <Folders size={36} class="shrink-0 text-(--accent)" />
+      <Folders size={36} class="text-accent shrink-0" />
       Projects
     </h1>
 
@@ -25,7 +25,7 @@ type Project = CollectionEntry<"projects">;
         projects.map((p: Project) => (
           <a
             href={`/projects/${p.id}`}
-            class="group cursor-pointer rounded-xl border border-(--border) bg-(--fg) p-5 duration-400 hover:border-(--accent)"
+            class="group border-border bg-bg hover:border-accent cursor-pointer rounded-xl border p-5 duration-400"
           >
             <div class="overflow-hidden rounded-xl">
               <Image
@@ -38,12 +38,12 @@ type Project = CollectionEntry<"projects">;
 
             <div class="space-y-3 pt-3">
               <h3
-                class="text-2xl font-bold duration-300 group-hover:text-(--accent)"
+                class="group-hover:text-accent text-2xl font-bold duration-300"
                 style={`view-transition-name: proj-h-${p.id}`}
               >
                 {p.data.title}
               </h3>
-              <p class="font-inter line-clamp-3 text-sm text-(--text-muted)">
+              <p class="font-inter text-text/70 line-clamp-3 text-sm">
                 {p.data.desc}
               </p>
               <div class="flex items-center gap-x-2">
