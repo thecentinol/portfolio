@@ -50,7 +50,7 @@
 
 @theme inline {
   --color-*: initial;
-  --color-accent: var(--rosepine-color-gold);
+  --color-accent: var(--rosepine-color-foam);
 
   --color-love: var(--rosepine-color-love);
   --color-gold: var(--rosepine-color-gold);

@@ -12,10 +12,6 @@
     color: var(--rosepine-text);
     font-family: var(--font-dmsans);
   }
-
-  ::selection {
-    background-color: var(--rosepine-highlight-med);
-  }
 }
 
 @theme {
