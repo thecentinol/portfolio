@@ -18,10 +18,8 @@ import Navbar from "../components/Navbar.astro";
     <Font cssVariable="--font-dmsans" />
     <ClientRouter />
 
-    <script is:inline astro:before-preparation>
-      const theme = localStorage.getItem("theme") || "main";
-      document.documentElement.setAttribute("data-theme", theme);
-    </script>
+    <script src="../scripts/layout.ts" is:inline astro:before-preparation
+    ></script>
   </head>
   <body class="px-6">
     <Navbar />
