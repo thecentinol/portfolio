@@ -1,27 +1,35 @@
 {
-  "name": "portfolio",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/ts-plugin": "1.10.8",
-    "@fontsource/instrument-serif": "^5.2.8",
-    "@fontsource/inter": "^5.2.8",
-    "@fontsource/space-grotesk": "^5.2.10",
-    "@lucide/astro": "^1.16.0",
-    "@tailwindcss/vite": "^4.3.0",
-    "astro": "6.3.3",
-    "tailwindcss": "^4.3.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19",
-    "prettier": "^3.8.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.8.0"
-  }
+	"name": "portfolio",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"lint": "eslint .",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"clean": "rm -rf node_modules .astro"
+	},
+	"dependencies": {
+		"@astrojs/ts-plugin": "1.10.8",
+		"@fontsource/instrument-serif": "^5.2.8",
+		"@fontsource/inter": "^5.2.8",
+		"@fontsource/space-grotesk": "^5.2.10",
+		"@lucide/astro": "^1.16.0",
+		"@tailwindcss/vite": "^4.3.0",
+		"astro": "6.3.3",
+		"tailwindcss": "^4.3.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@tailwindcss/typography": "^0.5.19",
+		"@typescript-eslint/parser": "^8.59.3",
+		"eslint": "^10.4.0",
+		"eslint-plugin-astro": "^1.7.0",
+		"prettier": "^3.8.3",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.8.0"
+	}
 }
