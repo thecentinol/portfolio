@@ -3,19 +3,19 @@ import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const projects = defineCollection({
-	loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
-	schema: ({ image }) =>
-		z.object({
-			title: z.string(),
-			desc: z.string(),
-			date: z.coerce.date(),
-			image: image(),
-			alt: z.string(),
-			tags: z.array(z.string()),
-			github: z.string().url().optional(),
-			live: z.string().url().optional(),
-			featured: z.boolean().default(false),
-		}),
+  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      desc: z.string(),
+      date: z.coerce.date(),
+      image: image(),
+      alt: z.string(),
+      tags: z.array(z.string()),
+      github: z.string().url().optional(),
+      live: z.string().url().optional(),
+      featured: z.boolean().default(false),
+    }),
 });
 
 export const collections = { projects };
