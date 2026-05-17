@@ -9,19 +9,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/ts-plugin": "1.10.7",
+    "@astrojs/ts-plugin": "1.10.8",
     "@fontsource/instrument-serif": "^5.2.8",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
-    "@lucide/astro": "^0.577.0",
-    "@tailwindcss/vite": "^4.2.1",
-    "astro": "6.0.4",
-    "tailwindcss": "^4.2.1"
+    "@lucide/astro": "^1.16.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "6.3.3",
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2"
+    "prettier-plugin-tailwindcss": "^0.8.0"
   }
 }
