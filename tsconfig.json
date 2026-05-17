@@ -1,15 +1,25 @@
 {
 	"compilerOptions": {
 		"strict": true,
-		"target": "ESNext",
-		"module": "ESNext",
+		"target": "esnext",
+		"module": "esnext",
 		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
+		"moduleDetection": "force",
+		"verbatimModuleSyntax": true,
 		"resolveJsonModule": true,
 		"noEmit": true,
-		"forceConsistentCasingInFileNames": true,
 		"allowJs": true,
 		"jsx": "preserve",
+
+		"useDefineForClassFields": true,
+		"noUncheckedSideEffectImports": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+
+		"exactOptionalPropertyTypes": true,
+		"allowImportingTsExtensions": true,
+		"forceConsistentCasingInFileNames": true,
+
 		"plugins": [{ "name": "@astrojs/ts-plugin" }],
 		"paths": {
 			"@components/*": ["./src/components/*"],
