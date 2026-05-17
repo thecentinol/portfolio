@@ -2,6 +2,9 @@ import astro from "eslint-plugin-astro";
 import js from "@eslint/js";
 
 export default [
+  {
+    ignores: [".astro/**"],
+  },
   js.configs.recommended,
   ...astro.configs.recommended,
   {
