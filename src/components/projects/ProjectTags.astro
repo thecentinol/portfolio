@@ -10,7 +10,7 @@ const { tags } = Astro.props;
 const tagColors =
   tags.reduce(
     (acc, tag) => {
-      acc[tag] = getRandomTagColor();
+      acc[tag] = getRandomTagColor() ?? "";
       return acc;
     },
     {} as Record<string, string>,
