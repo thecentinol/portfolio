@@ -1,0 +1,50 @@
+---
+import { Palette } from "@lucide/astro";
+
+const themes = ["main", "moon", "dawn"] as const;
+const accents = ["love", "gold", "rose", "pine", "foam", "iris"] as const;
+
+const accentClasses = {
+  love: "bg-love",
+  gold: "bg-gold",
+  rose: "bg-rose",
+  pine: "bg-pine",
+  foam: "bg-foam",
+  iris: "bg-iris",
+};
+---
+
+<div
+  class="border-border flex flex-col gap-4 rounded-xl border p-4 md:col-span-2 lg:col-span-1"
+>
+  <span class="flex items-center gap-2">
+    <Palette size={18} class="text-accent" />
+    <p class="tracking-tightest font-bold">Theme</p>
+  </span>
+  <div class="flex justify-between gap-4 text-center">
+    {
+      themes.map((t) => (
+        <button
+          id="theme-picker"
+          data-theme-choice={t}
+          class={`border-border w-full cursor-pointer rounded-xl border-2 px-2 py-1 capitalize`}
+        >
+          {t}
+        </button>
+      ))
+    }
+  </div>
+  <div class="flex w-full shrink-0 gap-3 md:gap-1.5">
+    {
+      accents.map((a) => (
+        <button
+          id="accent-picker"
+          data-accent-choice={a}
+          class={`${accentClasses[a]} aspect-square min-h-5 w-full min-w-5 cursor-pointer rounded-full outline-3 outline-offset-2 outline-none`}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<script src="../../scripts/themeSwitcher.ts"></script>
