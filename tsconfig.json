@@ -1,33 +1,34 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
-    "verbatimModuleSyntax": true,
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "allowJs": true,
-    "jsx": "preserve",
+	"compilerOptions": {
+		"strict": true,
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"moduleDetection": "force",
+		"verbatimModuleSyntax": true,
+		"resolveJsonModule": true,
+		"noEmit": true,
+		"allowJs": true,
+		"jsx": "preserve",
 
-    "useDefineForClassFields": true,
-    "noUncheckedSideEffectImports": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
+		"useDefineForClassFields": true,
+		"noUncheckedSideEffectImports": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
 
-    "exactOptionalPropertyTypes": true,
-    "allowImportingTsExtensions": true,
-    "forceConsistentCasingInFileNames": true,
+		"exactOptionalPropertyTypes": true,
+		"allowImportingTsExtensions": true,
+		"forceConsistentCasingInFileNames": true,
 
-    "plugins": [{ "name": "@astrojs/ts-plugin" }],
-    "paths": {
-      "@components/*": ["./src/components/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@static/*": ["./src/static/*"]
-    }
-  },
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+		"plugins": [{ "name": "@astrojs/ts-plugin" }],
+		"paths": {
+			"@components/*": ["./src/components/*"],
+			"@utils/*": ["./src/utils/*"],
+			"@static/*": ["./src/static/*"],
+			"@scripts/*": ["./src/scripts/*"]
+		}
+	},
+	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist"]
 }
