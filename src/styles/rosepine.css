@@ -50,7 +50,7 @@
 
 @theme inline {
   --color-*: initial;
-  --color-accent: var(--rosepine-color-foam);
+  --color-accent: var(--accent);
 
   --color-love: var(--rosepine-color-love);
   --color-gold: var(--rosepine-color-gold);
@@ -67,51 +67,68 @@
   --color-border: var(--rosepine-border);
 }
 
-@layer base {
-  :root {
-    --rosepine-bg: var(--rosepine-main-base);
-    --rosepine-fg: var(--rosepine-main-surface);
-    --rosepine-overlay: var(--rosepine-main-overlay);
-    --rosepine-text: var(--rosepine-main-text);
-    --rosepine-muted: var(--rosepine-main-muted);
-    --rosepine-subtle: var(--rosepine-main-subtle);
-    --rosepine-border: var(--rosepine-main-highlight-high);
-    --rosepine-color-love: var(--rosepine-main-love);
-    --rosepine-color-gold: var(--rosepine-main-gold);
-    --rosepine-color-rose: var(--rosepine-main-rose);
-    --rosepine-color-pine: var(--rosepine-main-pine);
-    --rosepine-color-foam: var(--rosepine-main-foam);
-    --rosepine-color-iris: var(--rosepine-main-iris);
-  }
-  [data-theme="moon"] {
-    --rosepine-bg: var(--rosepine-moon-base);
-    --rosepine-fg: var(--rosepine-moon-surface);
-    --rosepine-overlay: var(--rosepine-moon-overlay);
-    --rosepine-text: var(--rosepine-moon-text);
-    --rosepine-muted: var(--rosepine-moon-muted);
-    --rosepine-subtle: var(--rosepine-moon-subtle);
-    --rosepine-border: var(--rosepine-moon-highlight-high);
-    --rosepine-color-love: var(--rosepine-moon-love);
-    --rosepine-color-gold: var(--rosepine-moon-gold);
-    --rosepine-color-rose: var(--rosepine-moon-rose);
-    --rosepine-color-pine: var(--rosepine-moon-pine);
-    --rosepine-color-foam: var(--rosepine-moon-foam);
-    --rosepine-color-iris: var(--rosepine-moon-iris);
-  }
+[data-accent="love"] {
+  --accent: var(--color-love);
+}
+[data-accent="gold"] {
+  --accent: var(--color-gold);
+}
+[data-accent="rose"] {
+  --accent: var(--color-rose);
+}
+[data-accent="pine"] {
+  --accent: var(--color-pine);
+}
+[data-accent="foam"] {
+  --accent: var(--color-foam);
+}
+[data-accent="iris"] {
+  --accent: var(--color-iris);
+}
 
-  [data-theme="dawn"] {
-    --rosepine-bg: var(--rosepine-dawn-base);
-    --rosepine-fg: var(--rosepine-dawn-surface);
-    --rosepine-overlay: var(--rosepine-dawn-overlay);
-    --rosepine-text: var(--rosepine-dawn-text);
-    --rosepine-muted: var(--rosepine-dawn-muted);
-    --rosepine-subtle: var(--rosepine-dawn-subtle);
-    --rosepine-border: var(--rosepine-dawn-highlight-high);
-    --rosepine-color-love: var(--rosepine-dawn-love);
-    --rosepine-color-gold: var(--rosepine-dawn-gold);
-    --rosepine-color-rose: var(--rosepine-dawn-rose);
-    --rosepine-color-pine: var(--rosepine-dawn-pine);
-    --rosepine-color-foam: var(--rosepine-dawn-foam);
-    --rosepine-color-iris: var(--rosepine-dawn-iris);
-  }
+[data-theme="main"] {
+  --rosepine-bg: var(--rosepine-main-base);
+  --rosepine-fg: var(--rosepine-main-surface);
+  --rosepine-overlay: var(--rosepine-main-overlay);
+  --rosepine-text: var(--rosepine-main-text);
+  --rosepine-muted: var(--rosepine-main-muted);
+  --rosepine-subtle: var(--rosepine-main-subtle);
+  --rosepine-border: var(--rosepine-main-highlight-high);
+  --rosepine-color-love: var(--rosepine-main-love);
+  --rosepine-color-gold: var(--rosepine-main-gold);
+  --rosepine-color-rose: var(--rosepine-main-rose);
+  --rosepine-color-pine: var(--rosepine-main-pine);
+  --rosepine-color-foam: var(--rosepine-main-foam);
+  --rosepine-color-iris: var(--rosepine-main-iris);
+}
+[data-theme="moon"] {
+  --rosepine-bg: var(--rosepine-moon-base);
+  --rosepine-fg: var(--rosepine-moon-surface);
+  --rosepine-overlay: var(--rosepine-moon-overlay);
+  --rosepine-text: var(--rosepine-moon-text);
+  --rosepine-muted: var(--rosepine-moon-muted);
+  --rosepine-subtle: var(--rosepine-moon-subtle);
+  --rosepine-border: var(--rosepine-moon-highlight-high);
+  --rosepine-color-love: var(--rosepine-moon-love);
+  --rosepine-color-gold: var(--rosepine-moon-gold);
+  --rosepine-color-rose: var(--rosepine-moon-rose);
+  --rosepine-color-pine: var(--rosepine-moon-pine);
+  --rosepine-color-foam: var(--rosepine-moon-foam);
+  --rosepine-color-iris: var(--rosepine-moon-iris);
+}
+
+[data-theme="dawn"] {
+  --rosepine-bg: var(--rosepine-dawn-base);
+  --rosepine-fg: var(--rosepine-dawn-surface);
+  --rosepine-overlay: var(--rosepine-dawn-overlay);
+  --rosepine-text: var(--rosepine-dawn-text);
+  --rosepine-muted: var(--rosepine-dawn-muted);
+  --rosepine-subtle: var(--rosepine-dawn-subtle);
+  --rosepine-border: var(--rosepine-dawn-highlight-high);
+  --rosepine-color-love: var(--rosepine-dawn-love);
+  --rosepine-color-gold: var(--rosepine-dawn-gold);
+  --rosepine-color-rose: var(--rosepine-dawn-rose);
+  --rosepine-color-pine: var(--rosepine-dawn-pine);
+  --rosepine-color-foam: var(--rosepine-dawn-foam);
+  --rosepine-color-iris: var(--rosepine-dawn-iris);
 }
