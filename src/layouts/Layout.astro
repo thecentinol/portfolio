@@ -7,19 +7,28 @@ import Navbar from "../components/Navbar.astro";
 ---
 
 <!doctype html>
-<html class="scroll-smooth" lang="en" data-theme="main" data-accent="rose">
+<html class="scroll-smooth" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Slade.dev</title>
+    <title>slade.codes</title>
     <Font cssVariable="--font-dmsans" />
     <ClientRouter />
 
-    <script src="../scripts/layout.ts" is:inline astro:before-preparation
-    ></script>
+    <script is:inline astro:before-preparation>
+      function initTheme() {
+        const theme = localStorage.getItem("theme") ?? "main";
+        const accent = localStorage.getItem("accent") ?? "pine";
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.setAttribute("data-accent", accent);
+      }
+      initTheme();
+
+      document.addEventListener("astro:after-swap", initTheme);
+    </script>
   </head>
   <body class="px-6">
     <Navbar />
