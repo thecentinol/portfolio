@@ -3,9 +3,6 @@
 @import "./rosepine.css";
 @import "./colors.css";
 
-@custom-variant moon (&:where([data-theme="moon"] *));
-@custom-variant dawn (&:where([data-theme="dawn"] *));
-
 @layer base {
   body {
     background-color: var(--rosepine-bg);
