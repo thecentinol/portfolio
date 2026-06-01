@@ -1,5 +1,7 @@
 ---
 import { Menu, X } from "@lucide/astro";
+import ThemeSwitcher from "@components/home/ThemeSwitcher.astro";
+
 const pathname = Astro.url.pathname;
 const segments = pathname.split("/").filter(Boolean);
 
@@ -53,11 +55,14 @@ const crumbs = segments.map((seg, i) => ({
     Navigation
     <X id="sidebar-close" size={30} class="text-text shrink-0" />
   </div>
-  <nav class="flex flex-col text-2xl">
-    <a href="/" class="hover:bg-fg rounded px-2 py-1">Home</a>
-    <a href="/about" class="hover:bg-fg rounded px-2 py-1">About</a>
-    <a href="/projects" class="hover:bg-fg rounded px-2 py-1">Projects</a>
-  </nav>
+  <div class="flex flex-col space-y-10">
+    <nav class="flex flex-col text-2xl">
+      <a href="/" class="hover:bg-fg rounded px-2 py-1">Home</a>
+      <a href="/about" class="hover:bg-fg rounded px-2 py-1">About</a>
+      <a href="/projects" class="hover:bg-fg rounded px-2 py-1">Projects</a>
+    </nav>
+    <ThemeSwitcher />
+  </div>
 </aside>
 
 <script src="../scripts/navbar.ts"></script>

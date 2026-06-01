@@ -21,13 +21,13 @@ const accentClasses = {
     <Palette size={18} class="text-accent" />
     <p class="tracking-tightest font-bold">Theme</p>
   </span>
-  <div class="flex justify-between gap-4 text-center">
+  <div class="flex justify-between gap-4 overflow-hidden text-center">
     {
       themes.map((t) => (
         <button
           id="theme-picker"
           data-theme-choice={t}
-          class={`border-border w-full cursor-pointer rounded-xl border-2 px-2 py-1 capitalize`}
+          class={`border-border xs:text-[0.7rem] bg-overlay w-full cursor-pointer rounded-xl border-2 px-2 py-1 capitalize sm:text-[1.2rem]`}
         >
           {t}
         </button>
@@ -40,7 +40,7 @@ const accentClasses = {
         <button
           id="accent-picker"
           data-accent-choice={a}
-          class={`${accentClasses[a]} aspect-square min-h-5 w-full min-w-5 cursor-pointer rounded-full outline-3 outline-offset-2 outline-none`}
+          class={`${accentClasses[a]} aspect-square min-h-5 w-full min-w-5 cursor-pointer rounded-full outline-3 outline-offset-2 transition-normal duration-300 ease-in-out outline-none`}
         />
       ))
     }
