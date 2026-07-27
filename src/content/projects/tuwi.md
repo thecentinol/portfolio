@@ -5,6 +5,7 @@ date: 2026-06-05
 image: "../../static/tuwi.webp"
 alt: "tuwi image"
 tags: ["Go", "Linux", "D-Bus", "IPC", "NetworkManager", "Bubbletea", "Lipgloss"]
+github: "https://github.com/thecentinol/tuwi"
 featured: true
 ---
 
