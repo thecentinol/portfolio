@@ -14,7 +14,6 @@ tags:
     "PostgreSQL",
     "Tanstack Query",
   ]
-featured: true
 ---
 
 # Agentflux

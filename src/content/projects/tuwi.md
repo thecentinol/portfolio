@@ -1,6 +1,7 @@
 ---
 title: "tuwi"
 desc: "A TUI for managing WiFi on Linux via D-Bus IPC"
+order: 0
 date: 2026-06-05
 image: "../../static/tuwi.webp"
 alt: "tuwi image"
