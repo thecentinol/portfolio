@@ -1,18 +1,14 @@
 ---
-import { Mail, MapPin, Clock } from "@lucide/astro";
+import { Mail } from "@lucide/astro";
 import { Github } from "simple-icons-astro";
 ---
 
 <section
   class="xs:py-30 xs:px-6 mx-auto flex max-w-6xl items-center justify-between py-0 md:py-25 lg:py-40"
 >
-  <div class="xs:space-y-10 md:space-y-8">
-    <div class="text-accent flex items-center gap-2">
-      <hr class="bg-accent h-px w-10" />
-      <span class="text-xs tracking-[0.20rem]">FULL STACK DEVELOPER</span>
-    </div>
+  <div class="xs:space-y-10 md:space-y-10">
     <div>
-      <h1 class="xs:text-4xl mb-2 font-bold sm:text-5xl md:text-6xl">
+      <h1 class="xs:text-4xl mb-2 font-bold sm:text-5xl">
         Hey, I'm Slade
         <span
           class="inline-block origin-[70%_70%] hover:animate-[wiggle_0.6s_ease-in-out]"
@@ -20,75 +16,40 @@ import { Github } from "simple-icons-astro";
           👋
         </span>
       </h1>
-      <p class="text-text/70 text-2xl italic md:text-3xl">
-        I build things for the web.
-      </p>
     </div>
-    <p class="xs:text-xl text-md text-subtle max-w-xl">
-      I build <strong class="text-text">web apps and internal tools</strong> — from
-      the interface down to the backend and database. Based in South Africa, working
-      with clients globally. Currently building{" "}<a
-        href="/projects/agentflux"
+    <p class="xs:text-xl text-subtle max-w-2xl md:text-2xl">
+      Self-taught software engineer based in South Africa. Tinkering on Linux
+      and coding in Go keeps me sane. Currently building {" "}
+      <a
+        href="/projects/tuwi"
         class="text-accent hover:bg-accent underline decoration-dashed underline-offset-4 transition-all duration-300 hover:tracking-[0.09rem] hover:text-(--rosepine-main-base)"
-        >Agentflux</a
-      >.
+        >tuwi</a
+      >
+      , an open-source WiFi manager for Linux.
     </p>
 
-    <div class="xs:flex text-text items-center gap-2 md:hidden">
+    <div class="font-inter text-muted flex flex-wrap items-center gap-4">
       <a
-        class="flex items-center gap-2"
         href="https://github.com/thecentinol"
         rel="noopener noreferrer"
         target="_blank"
+        class="hover:text-accent flex items-center gap-2"
       >
-        <Github />
-        GitHub
+        <Github size={20} />
+        Github
       </a>
+      <span>|</span>
       <a
-        class="flex items-center gap-2"
         href="mailto:centinol@proton.me"
         rel="noopener noreferrer"
         target="_blank"
+        class="hover:text-accent flex items-center gap-2"
       >
-        <Mail />
+        <Mail size={20} />
         Email
       </a>
+      <span>|</span>
+      <span class="flex items-center"> Open to remote </span>
     </div>
-
-    <div class="font-inter text-muted flex flex-wrap items-center gap-4">
-      <span class="flex items-center gap-2">
-        <MapPin class="text-accent" />
-        South Africa
-      </span>
-      <span class="flex items-center gap-2">
-        <hr class="bg-accent h-2 w-2 animate-pulse rounded-full" />
-        Available for work
-      </span>
-      <span class="flex items-center gap-2">
-        <Clock class="text-accent" />
-        Open to remote
-      </span>
-    </div>
-  </div>
-
-  <div class="text-subtle hidden flex-col items-center gap-2 md:flex">
-    <hr class="bg-muted h-12 w-px" />
-    <a
-      class="hover:text-accent cursor-pointer"
-      href="https://github.com/thecentinol"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <Github />
-    </a>
-    <a
-      class="hover:text-accent cursor-pointer"
-      href="mailto:centinol@proton.me"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <Mail />
-    </a>
-    <hr class="bg-muted h-12 w-px" />
   </div>
 </section>
