@@ -1,5 +1,5 @@
 ---
-title: "tuwi"
+title: "Tuwi"
 desc: "A TUI for managing WiFi on Linux via D-Bus IPC"
 order: 0
 date: 2026-06-05
