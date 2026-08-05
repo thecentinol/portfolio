@@ -1,5 +1,7 @@
 ---
 import { Menu, X } from "@lucide/astro";
+import Resume from "@static/resume.pdf";
+
 const pathname = Astro.url.pathname;
 const segments = pathname.split("/").filter(Boolean);
 
@@ -48,15 +50,27 @@ const crumbs = segments.map((seg, i) => ({
 <!-- Sidebar -->
 <aside id="sidebar" class="toggle-sidebar">
   <div
-    class="border-border text-accent mb-8 flex items-center justify-between border-b py-2 text-2xl"
+    class="border-border text-accent mb-4 flex items-center justify-between border-b py-2 text-2xl"
   >
     Navigation
     <X id="sidebar-close" size={30} class="text-text shrink-0" />
   </div>
-  <nav class="flex flex-col text-2xl">
-    <a href="/" class="hover:bg-fg rounded px-2 py-1">Home</a>
-    <a href="/about" class="hover:bg-fg rounded px-2 py-1">About</a>
-    <a href="/projects" class="hover:bg-fg rounded px-2 py-1">Projects</a>
+  <nav class="flex flex-col gap-2 text-2xl">
+    <a href="/" class="px-2 py-1">Home</a>
+    <a href="/about" class="px-2 py-1">About</a>
+    <a href="/projects" class="px-2 py-1">Projects</a>
+
+    <!-- Divider -->
+    <hr class="text-border/70 my-1 h-1 w-full" />
+
+    <a
+      href={Resume}
+      rel="noopener noreferrer"
+      target="_blank"
+      class="px-2 py-1"
+    >
+      Resume
+    </a>
   </nav>
 </aside>
 
