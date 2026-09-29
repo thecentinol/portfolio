@@ -24,7 +24,7 @@ jobs:
       - name: Build & Deploy
         uses: cloudflare/wrangler-action@v4.0.0
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_ACCOUNT_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           packageManager: bun
           command: pages deploy dist --project-name=sladedev
